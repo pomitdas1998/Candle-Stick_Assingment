@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>View File</title>
+</head>
+<body>
+    
+    <form class ="container mt-5" method = "POST" enctype="multipart/form-data">
+        <h1>View File !</h1>
+        {% csrf_token %}
+    
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Index_name</th>
+                <th scope="col">date</th>
+                <th scope="col">time</th>
+                <th scope="col">open</th>
+                <th scope="col">high</th>
+                <th scope="col">Low</th>
+                <th scope="col">close</th>
+                <th scope="col">volume</th>
+    
+              </tr>
+            </thead>
+
+      
+            {% for candle in candle %}
+            <tbody>
+              {% comment %} <tr>
+                <th scope="row">{{candle.id}}</th>
+                <td>{{candle.Index_name}}</td>
+                <td>{{candle.date}}</td>
+                <td>{{candle.time}}</td>
+                <td>{{candle.open}}</td>
+                <td>{{candle.high}}</td>
+                <td>{{candle.low}}</td>
+                <td>{{candle.close}}</td>
+                <td>{{candle.volume}}</td>
+              </tr> {% endcomment %}
+            </tbody>
+            {% endfor %} 
+          </table>
+        
+
+    </form>
+
+</body>
+</html>
